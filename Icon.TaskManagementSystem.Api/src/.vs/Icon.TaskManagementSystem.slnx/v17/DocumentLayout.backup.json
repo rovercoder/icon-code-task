@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{51EAF416-77FF-E84C-29AC-CDCDBAB2551F}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\data\\migrations\\notes.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{51EAF416-77FF-E84C-29AC-CDCDBAB2551F}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:data\\migrations\\notes.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51EAF416-77FF-E84C-29AC-CDCDBAB2551F}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\data\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51EAF416-77FF-E84C-29AC-CDCDBAB2551F}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:data\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "notes.txt",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Data\\Migrations\\notes.txt",
+              "RelativeDocumentMoniker": "Data\\Migrations\\notes.txt",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Data\\Migrations\\notes.txt",
+              "RelativeToolTip": "Data\\Migrations\\notes.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-01-10T20:00:14.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DBContext.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Data\\DBContext.cs",
+              "RelativeDocumentMoniker": "Data\\DBContext.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Data\\DBContext.cs",
+              "RelativeToolTip": "Data\\DBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T19:42:40.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

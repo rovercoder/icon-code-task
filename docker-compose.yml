@@ -1,0 +1,36 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: ${SA_PASSWORD}
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+
+  backend:
+    build:
+      context: ./Icon.TaskManagementSystem.Api
+      dockerfile: Dockerfile
+    ports:
+      - "5000:8080"
+    depends_on:
+      - sqlserver
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+
+  frontend:
+    build:
+      context: ./Icon.TaskManagementSystem.FrontEnd/app
+      dockerfile: Dockerfile
+    ports:
+      - "4000:3000"
+    depends_on:
+      - backend
+    environment:
+      - API_BASE_URL=http://backend:8080
+
+volumes:
+  sqlserver-data:
+  

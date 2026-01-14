@@ -1,0 +1,1 @@
+export const regexBase62 = /^[A-Za-z0-9]*$/

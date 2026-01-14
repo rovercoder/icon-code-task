@@ -1,0 +1,394 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\helpers\\endpointfilters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:helpers\\endpointfilters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\icon.taskmanagementsystem.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:icon.taskmanagementsystem.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\application\\createtask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:application\\createtask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\application\\gettasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:application\\gettasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\application\\common\\endpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:application\\common\\endpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\application\\updatetask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:application\\updatetask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\application\\responses\\taskstatusresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:application\\responses\\taskstatusresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\application\\responses\\taskresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:application\\responses\\taskresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\application\\responses\\detailsresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:application\\responses\\detailsresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\helpers\\appextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:helpers\\appextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\helpers\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:helpers\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\domain\\taskstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:domain\\taskstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\domain\\details.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:domain\\details.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\application\\getdetailsfortasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:application\\getdetailsfortasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\domain\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:domain\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\data\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:data\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\data\\models\\taskstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:data\\models\\taskstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|c:\\users\\rovercoder\\mine\\projects\\work\\icon\\icon.taskmanagementsystem.api\\src\\data\\migrations\\20260110205919_addtaskstatuses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559144CA-8C68-705B-3B15-5AA022DAF1FB}|Icon.TaskManagementSystem.Api.csproj|solutionrelative:data\\migrations\\20260110205919_addtaskstatuses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Result.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Helpers\\Result.cs",
+              "RelativeDocumentMoniker": "Helpers\\Result.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Helpers\\Result.cs",
+              "RelativeToolTip": "Helpers\\Result.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T16:43:01.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EndpointFilters.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Helpers\\EndpointFilters.cs",
+              "RelativeDocumentMoniker": "Helpers\\EndpointFilters.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Helpers\\EndpointFilters.cs",
+              "RelativeToolTip": "Helpers\\EndpointFilters.cs",
+              "ViewState": "AgIAAFwAAAAANDMzM3MuwCUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T16:15:00.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AppExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Helpers\\AppExtensions.cs",
+              "RelativeDocumentMoniker": "Helpers\\AppExtensions.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Helpers\\AppExtensions.cs",
+              "RelativeToolTip": "Helpers\\AppExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T15:08:37.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABcAAACAm5mZmRkWwD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T14:49:28.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-12T14:34:06.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-12T14:31:31.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "appsettings.Production.json",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\appsettings.Production.json",
+              "RelativeDocumentMoniker": "appsettings.Production.json",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\appsettings.Production.json",
+              "RelativeToolTip": "appsettings.Production.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-12T14:30:14.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Task.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Data\\Models\\Task.cs",
+              "RelativeDocumentMoniker": "Data\\Models\\Task.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Data\\Models\\Task.cs",
+              "RelativeToolTip": "Data\\Models\\Task.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T13:12:03.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GetDetailsForTasks.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Application\\GetDetailsForTasks.cs",
+              "RelativeDocumentMoniker": "Application\\GetDetailsForTasks.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Application\\GetDetailsForTasks.cs",
+              "RelativeToolTip": "Application\\GetDetailsForTasks.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T12:59:17.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TaskStatusResponse.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Application\\Responses\\TaskStatusResponse.cs",
+              "RelativeDocumentMoniker": "Application\\Responses\\TaskStatusResponse.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Application\\Responses\\TaskStatusResponse.cs",
+              "RelativeToolTip": "Application\\Responses\\TaskStatusResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T12:54:01.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetTasks.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Application\\GetTasks.cs",
+              "RelativeDocumentMoniker": "Application\\GetTasks.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Application\\GetTasks.cs",
+              "RelativeToolTip": "Application\\GetTasks.cs",
+              "ViewState": "AgIAADEAAAAgZ2ZmZkYwwEYAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T12:45:10.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UpdateTask.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Application\\UpdateTask.cs",
+              "RelativeDocumentMoniker": "Application\\UpdateTask.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Application\\UpdateTask.cs",
+              "RelativeToolTip": "Application\\UpdateTask.cs",
+              "ViewState": "AgIAAB0AAADAAAAAAMAvwFgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T12:43:41.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateTask.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Application\\CreateTask.cs",
+              "RelativeDocumentMoniker": "Application\\CreateTask.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Application\\CreateTask.cs",
+              "RelativeToolTip": "Application\\CreateTask.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAIAywEMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T12:41:14.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "20260110205919_AddTaskStatuses.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Data\\Migrations\\20260110205919_AddTaskStatuses.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\20260110205919_AddTaskStatuses.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Data\\Migrations\\20260110205919_AddTaskStatuses.cs",
+              "RelativeToolTip": "Data\\Migrations\\20260110205919_AddTaskStatuses.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T12:33:58.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "TaskStatus.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Data\\Models\\TaskStatus.cs",
+              "RelativeDocumentMoniker": "Data\\Models\\TaskStatus.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Data\\Models\\TaskStatus.cs",
+              "RelativeToolTip": "Data\\Models\\TaskStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T12:29:45.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Task.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Domain\\Task.cs",
+              "RelativeDocumentMoniker": "Domain\\Task.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Domain\\Task.cs",
+              "RelativeToolTip": "Domain\\Task.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T12:27:30.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TaskStatus.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Domain\\TaskStatus.cs",
+              "RelativeDocumentMoniker": "Domain\\TaskStatus.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Domain\\TaskStatus.cs",
+              "RelativeToolTip": "Domain\\TaskStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T12:27:23.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Details.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Domain\\Details.cs",
+              "RelativeDocumentMoniker": "Domain\\Details.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Domain\\Details.cs",
+              "RelativeToolTip": "Domain\\Details.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T12:27:11.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TaskResponse.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Application\\Responses\\TaskResponse.cs",
+              "RelativeDocumentMoniker": "Application\\Responses\\TaskResponse.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Application\\Responses\\TaskResponse.cs",
+              "RelativeToolTip": "Application\\Responses\\TaskResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T12:25:53.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DetailsResponse.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Application\\Responses\\DetailsResponse.cs",
+              "RelativeDocumentMoniker": "Application\\Responses\\DetailsResponse.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Application\\Responses\\DetailsResponse.cs",
+              "RelativeToolTip": "Application\\Responses\\DetailsResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T12:25:38.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Icon.TaskManagementSystem.Api.http",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Icon.TaskManagementSystem.Api.http",
+              "RelativeDocumentMoniker": "Icon.TaskManagementSystem.Api.http",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Icon.TaskManagementSystem.Api.http",
+              "RelativeToolTip": "Icon.TaskManagementSystem.Api.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-01-12T12:17:12.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Endpoints.cs",
+              "DocumentMoniker": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Application\\Common\\Endpoints.cs",
+              "RelativeDocumentMoniker": "Application\\Common\\Endpoints.cs",
+              "ToolTip": "C:\\Users\\RoverCoder\\Mine\\Projects\\work\\Icon\\Icon.TaskManagementSystem.Api\\src\\Application\\Common\\Endpoints.cs",
+              "RelativeToolTip": "Application\\Common\\Endpoints.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T12:14:11.398Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

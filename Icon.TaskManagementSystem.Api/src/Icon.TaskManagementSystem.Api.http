@@ -1,0 +1,47 @@
+@Icon.TaskManagementSystem.Api.Api_HostAddress = http://localhost:5074
+
+GET {{Icon.TaskManagementSystem.Api.Api_HostAddress}}/details/tasks
+Accept: application/json
+###
+
+GET {{Icon.TaskManagementSystem.Api.Api_HostAddress}}/tasks/
+Accept: application/json
+Content-Type: application/json
+{
+    "title": "New Task",
+    "description": "Task Description",
+    "statusId": "EsfZDnXWcWO3oIQJycsis7"
+}
+###
+
+POST {{Icon.TaskManagementSystem.Api.Api_HostAddress}}/tasks/
+Accept: application/json
+Idempotency-Key: e11edd24-2c11-4bd1-9e95-790a8a343f45
+Content-Type: application/json
+{
+    "title": "New Task",
+    "description": "Task Description",
+    "statusId": "EsfZDnXWcWO3oIQJycsis7"
+}
+
+###
+
+GET {{Icon.TaskManagementSystem.Api.Api_HostAddress}}/tasks/zj4ZPybVIci7upB60XzPJ9
+Accept: application/json
+
+###
+
+PATCH {{Icon.TaskManagementSystem.Api.Api_HostAddress}}/tasks/zj4ZPybVIci7upB60XzPJ9
+Accept: application/json
+Idempotency-Key: e11edd24-2c11-4bd1-9e95-790a8a343f44
+Content-Type: application/json
+{
+    "statusId": "EsfZDnXWcWO3oIQJycsis7"
+}
+
+###
+
+DELETE {{Icon.TaskManagementSystem.Api.Api_HostAddress}}/tasks/zj4ZPybVIci7upB60XzPJ9
+Accept: application/json
+
+###
