@@ -43,83 +43,86 @@ const TaskEditorPage: React.FC<TaskEditorProps> = ({ task, taskStatuses, goToTas
 
     return (
         <div className="task-editor">
-            <h1>{isCreateMode ? 'Create New Task' : 'Edit Task'}</h1>
+            <div className="task-editor-panel">
+                <h2>{isCreateMode ? 'Create New Task' : 'Edit Task'}</h2>
+            </div>
+            <div className='task-form-container'>
+                <Form method="post" className="task-form" onSubmit={changeIdempotencyKey}>
+                    { task && <input type="hidden" name="taskId" value={task.id} /> }
+                    <input type="hidden" name="idempotencyKey" value={idempotencyKey} />
 
-            <Form method="post" className="task-form" onSubmit={changeIdempotencyKey}>
-                { task && <input type="hidden" name="taskId" value={task.id} /> }
-                <input type="hidden" name="idempotencyKey" value={idempotencyKey} />
+                    <div className="form-group">
+                        <label htmlFor="title">Title *</label>
+                        <input
+                            id="title"
+                            name="title"
+                            minLength={taskTitleMinLength}
+                            maxLength={taskTitleMaxLength}
+                            value={formData.title}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
 
-                <div className="form-group">
-                    <label htmlFor="title">Title *</label>
-                    <input
-                        id="title"
-                        name="title"
-                        minLength={taskTitleMinLength}
-                        maxLength={taskTitleMaxLength}
-                        value={formData.title}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
+                    <div className="form-group">
+                        <label htmlFor="description">Description</label>
+                        <textarea
+                            id="description"
+                            name="description"
+                            minLength={taskDescriptionMinLength}
+                            maxLength={taskDescriptionMaxLength}
+                            value={formData.description}
+                            onChange={handleChange}
+                            rows={4}
+                            required
+                        />
+                    </div>
 
-                <div className="form-group">
-                    <label htmlFor="description">Description</label>
-                    <textarea
-                        id="description"
-                        name="description"
-                        minLength={taskDescriptionMinLength}
-                        maxLength={taskDescriptionMaxLength}
-                        value={formData.description}
-                        onChange={handleChange}
-                        rows={4}
-                        required
-                    />
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="statusId">Status *</label>
-                    <select
-                        id="statusId"
-                        name="statusId"
-                        value={formData.statusId}
-                        onChange={handleChange}
-                        required
-                    >
-                        {taskStatuses.map(status => (
-                            <option key={status.id} value={status.id}>
-                                {status.name}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-
-                <div className="form-actions">
-                    <button type="submit" name="saveButton" disabled={isSubmitting}>
-                        {isSubmitting ? 'Saving...' : isCreateMode ? 'Create Task' : 'Update Task'}
-                    </button>
-
-                    {!isCreateMode && (
-                        <button
-                            type="submit"
-                            name="intent"
-                            value="delete"
-                            onClick={(e) => {
-                                if (!confirm('Are you sure you want to delete this task?')) {
-                                    e.preventDefault();
-                                }
-                            }}
-                            className="btn-delete"
+                    <div className="form-group">
+                        <label htmlFor="statusId">Status *</label>
+                        <select
+                            id="statusId"
+                            name="statusId"
+                            value={formData.statusId}
+                            onChange={handleChange}
+                            required
                         >
-                            Delete Task
-                        </button>
-                    )}
+                            {taskStatuses.map(status => (
+                                <option key={status.id} value={status.id}>
+                                    {status.name}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
 
-                    <button type="button" onClick={() => goToTasksList()}>
-                        Return to Tasks List
-                    </button>
-                </div>
-                <input type="hidden" name="intent" value="save" />
-            </Form>
+                    <div className="form-actions">
+                        <button type="submit" name="saveButton" disabled={isSubmitting}>
+                            {isSubmitting ? 'Saving...' : isCreateMode ? 'Create Task' : 'Update Task'}
+                        </button>
+
+                        {!isCreateMode && (
+                            <button
+                                type="submit"
+                                name="intent"
+                                value="delete"
+                                onClick={(e) => {
+                                    if (!confirm('Are you sure you want to delete this task?')) {
+                                        e.preventDefault();
+                                    }
+                                }}
+                                className="btn-delete"
+                            >
+                                Delete Task
+                            </button>
+                        )}
+
+                        <button type="button" onClick={() => goToTasksList()}>
+                            Return to Tasks List
+                        </button>
+                    </div>
+                    <input type="hidden" name="intent" value="save" />
+                </Form>
+            </div>
         </div>
     );
 }

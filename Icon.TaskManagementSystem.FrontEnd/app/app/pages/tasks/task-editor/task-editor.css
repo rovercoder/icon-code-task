@@ -1,4 +1,33 @@
 .task-editor {
+    display: flex;
+    flex-direction: column;
+    height: var(--viewportHeight);
+    overflow: auto;
+}
+
+.task-editor-panel {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    padding: 16px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    border-bottom: 1px solid #eee;
+}
+
+.task-editor-panel h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.task-form {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
