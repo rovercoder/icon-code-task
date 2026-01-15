@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router";
+import ErrorAlert from "~/components/error-alert/error-alert";
 import Task from "~/components/task/task";
 import { TasksContext } from "~/contexts/tasks.context";
 import { noRevalidateQueryParamFull } from "~/utils/routing.utils";
@@ -7,7 +8,7 @@ import { noRevalidateQueryParamFull } from "~/utils/routing.utils";
 export function TasksListPage() {
     const taskContext = useContext(TasksContext);
     if (taskContext == null) {
-        throw Error('TasksContext not found in scope.');
+        return <ErrorAlert message="TasksContext not found in scope!" />
     }
     return (
         <div className="tasks-container">

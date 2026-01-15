@@ -6,6 +6,8 @@ import { getDetailsForTasks } from "~/adapters/details.api";
 import { type ResultJson, Result, StatusInternal } from "~/adapters/result";
 import { getTasks } from "~/adapters/tasks.api";
 import { closeToastById, showToast, showToastsGroup } from "~/components/toast/toast";
+import ErrorAlert from "~/components/error-alert/error-alert";
+import Loader from "~/components/loader/loader";
 import type { DetailsForTasks } from "~/types/details.types";
 import type { Task, TaskList } from "~/types/tasks.types";
 import { shouldRevalidateRouteNavigation } from "~/utils/routing.utils";
@@ -74,22 +76,18 @@ export default function Tasks() {
     }, [details, tasks]);
 
     if (details.isLoading || tasks.isLoading) {
-        return <div>Loader...</div>;
+        return <Loader message="Loading tasks and details..." />;
     }
 
     if (!details.isSuccess || !tasks.isSuccess) {
-        const errorMessage = [!details.isSuccess ? details.fullDescription : '', !tasks.isSuccess ? tasks.fullDescription : ''].join('\r\n\r\n').trim();
-        return <div>
-            <p>{errorMessage}</p>
-            <button onClick={handleRetry}>Retry</button>
-        </div>
+        const errors = [!details.isSuccess ? details.fullDescription : '', !tasks.isSuccess ? tasks.fullDescription : ''].filter(x => !!x && x.length > 0);
+        return <>
+            { errors.map(errorMessage => <ErrorAlert message={errorMessage} onRetry={handleRetry} />) }
+        </>;
     }
 
     if (tasks.value == null || details.value == null) {
-        return <div>
-            <p>Inconsistent state!</p>
-            <button onClick={handleRetry}>Retry</button>
-        </div>;
+        return <ErrorAlert message="Inconsistent state!" onRetry={handleRetry} />;
     }
 
     const refreshAllTasks = () => {

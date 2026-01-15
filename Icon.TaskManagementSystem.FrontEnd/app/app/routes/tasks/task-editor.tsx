@@ -9,6 +9,8 @@ import { useCallback, useContext, useEffect } from "react";
 import { TasksContext } from "~/contexts/tasks.context";
 import { type TaskAllExceptIdWithIdempotencyKey, TaskAllExceptIdWithIdempotencyKeySchema } from "~/adapters/tasks.api.types";
 import { ToastIdPrefix } from "~/constants/toasts.constants";
+import ErrorAlert from "~/components/error-alert/error-alert";
+import Loader from "~/components/loader/loader";
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -104,11 +106,11 @@ export default function TaskEditor() {
 
     const tasksContext = useContext(TasksContext);
     if (tasksContext == null) {
-        throw new Error('TasksContext not in scope!');
+        return <ErrorAlert message="TasksContext not found in scope!" />
     }
 
     if (task.isLoading) {
-        return <div>Loading...</div>
+        return <Loader message="Loading task..." />;
     }
 
     useEffect(() => {
