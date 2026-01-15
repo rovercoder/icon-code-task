@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
@@ -22,15 +23,27 @@ public class CreateTask
     [OpenApiSchemaName($"{nameof(CreateTask)}Command")]
     public sealed record Command
     {
+        /// <summary>
+        /// The title of the task. Must be 2–50 characters after trimming.
+        /// </summary>
         [Required]
         [TrimmedLength(2, 50)]
+        [Description("The title of the task. Must be 2–50 characters after trimming.")]
         public required string Title { get; init; }
 
+        /// <summary>
+        /// A detailed description of the task. Can be between 0 and 1000 characters long after trimming.
+        /// </summary>
         [Required]
         [TrimmedLength(0, 1000)]
+        [Description("A detailed description of the task. Can be between 0 and 1000 characters long after trimming.")]
         public required string Description { get; init; }
 
+        /// <summary>
+        /// The current task status identifier of the task. Must be valid.
+        /// </summary>
         [Required]
+        [Description("The current task status identifier of the task. Must be valid.")]
         public required string StatusId { get; init; }
 
         [JsonIgnore]

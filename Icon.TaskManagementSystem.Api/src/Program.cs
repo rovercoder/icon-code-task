@@ -9,8 +9,6 @@ using static Icon.TaskManagementSystem.Api.Helpers.Validation;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-
 // Add appsettings.json
 var appSettingsConfiguration = builder.Configuration
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)

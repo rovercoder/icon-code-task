@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
@@ -22,12 +23,24 @@ public class GetTasks
     [OpenApiSchemaName($"{nameof(GetTasks)}Command")]
     public sealed record Command
     {
-        [TrimmedLength(2, 50)] 
+        /// <summary>
+        /// Part of the title of the tasks to filter. Must be 2–50 characters after trimming. Optional.
+        /// </summary>
+        [TrimmedLength(2, 50)]
+        [Description("Part of the title of the tasks to filter. Must be 2–50 characters after trimming. Optional.")]
         public string? Title { get; init; }
-        
+
+        /// <summary>
+        /// Part of the detailed description of the tasks to filter. Can be between 0 and 1000 characters long after trimming. Optional.
+        /// </summary>
         [TrimmedLength(0, 1000)] 
+        [Description("Part of the detailed description of the tasks to filter. Can be between 0 and 1000 characters long after trimming. Optional.")]
         public string? Description { get; init; }
-        
+
+        /// <summary>
+        /// The current task status identifier of the tasks to filter by. Must be valid.
+        /// </summary>
+        [Description("The current task status identifier of the tasks to filter by. Must be valid.")]
         public string? StatusId { get; init; }
 
         [JsonIgnore]

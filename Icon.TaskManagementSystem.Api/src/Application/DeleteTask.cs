@@ -4,6 +4,7 @@ using Icon.TaskManagementSystem.Api.Helpers;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
@@ -18,8 +19,12 @@ public class DeleteTask
 {
     public sealed record Parameters
     {
+        /// <summary>
+        /// The identifier of the task to delete.
+        /// </summary>
         [FromRoute]
         [Required]
+        [Description("The identifier of the task to delete.")]
         public required string Id { get; init; }
 
         [JsonIgnore]
