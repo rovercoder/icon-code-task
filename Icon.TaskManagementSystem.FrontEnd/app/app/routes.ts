@@ -5,6 +5,5 @@ export default [
     route("tasks", "routes/tasks/tasks.tsx", [
         route("", "routes/tasks/tasks-list.tsx"),
         route("task/:taskId?", "routes/tasks/task-editor.tsx"),
-        route("filter", "routes/tasks/filter.tsx"),
     ])
 ] satisfies RouteConfig;

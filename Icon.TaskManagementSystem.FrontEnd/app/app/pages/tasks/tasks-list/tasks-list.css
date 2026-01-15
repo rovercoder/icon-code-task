@@ -26,7 +26,7 @@
 }
 
 .new-task-button {
-    display: inline-block;
+    display: block;
     padding: 8px 16px;
     background-color: #007bff;
     color: white;
@@ -47,9 +47,16 @@
     outline-offset: 2px;
 }
 
-.tasks-center {
-    width: 100%;
-    max-width: 800px;
+.tasks-list {
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
     padding: 20px;
     margin: 0 auto;
+}
+
+.task-status-column {
+    flex-grow: 1;
+    flex-basis: auto;
+    min-width: 300px;
 }

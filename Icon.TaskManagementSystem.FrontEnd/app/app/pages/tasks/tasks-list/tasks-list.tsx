@@ -4,6 +4,7 @@ import ErrorAlert from "~/components/error-alert/error-alert";
 import Task from "~/components/task/task";
 import { TasksContext } from "~/contexts/tasks.context";
 import { noRevalidateQueryParamFull } from "~/utils/routing.utils";
+import './tasks-list.css';
 
 export function TasksListPage() {
     const taskContext = useContext(TasksContext);
@@ -18,16 +19,23 @@ export function TasksListPage() {
                     New Task
                 </Link>
             </div>
-            <div className="tasks-center">
-                {
-                    taskContext.tasks.map(task => <Task
-                        key={task.id}
-                        id={task.id}
-                        title={task.title}
-                        description={task.description}
-                        status={taskContext.taskStatuses.find(taskStatus => task.statusId === taskStatus.id)?.name ?? 'Unknown'}
-                    />)
-                }
+            <div className="tasks-list">
+                {taskContext.taskStatuses.map(taskStatus => 
+                    <div key={taskStatus.id} className="task-status-column" data-task-status-id={taskStatus.id}>
+                        <span className="task-status-column-name">{taskStatus.name}</span>
+                        <div className="task-status-tasks">
+                            { 
+                                taskContext.tasks.filter(x => x.statusId == taskStatus.id).map(task => <Task
+                                    key={task.id}
+                                    id={task.id}
+                                    title={task.title}
+                                    description={task.description}
+                                    status={taskContext.taskStatuses.find(taskStatus => task.statusId === taskStatus.id)?.name ?? 'Unknown'}
+                                />)
+                            }
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );
