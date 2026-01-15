@@ -22,7 +22,7 @@ export function TasksListPage() {
             <div className="tasks-list">
                 {taskContext.taskStatuses.map(taskStatus => 
                     <div key={taskStatus.id} className="task-status-column" data-task-status-id={taskStatus.id}>
-                        <span className="task-status-column-name">{taskStatus.name}</span>
+                        <div className="task-status-column-name">{taskStatus.name}</div>
                         <div className="task-status-tasks">
                             { 
                                 taskContext.tasks.filter(x => x.statusId == taskStatus.id).map(task => <Task
