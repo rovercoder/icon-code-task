@@ -9,11 +9,11 @@ export function Toast() {
 
 export const openToastDatabase: { [baseToastId: string]: number } = {};
 
-export function showToastByResult(result: Result<unknown>, toastIdPrefix: string, options?: { onRetry?: () => void }): Id | undefined {
-    if (result == null || !(result instanceof Result)) {
+export function showToastByResult(toastIdPrefix: string, result: Result<unknown>, options?: { onRetry?: () => void }): Id | undefined {
+    if (result == null || toastIdPrefix == null || toastIdPrefix.toString().length === 0 || !(result instanceof Result)) {
         return;
     }
-    return showToast(result.toJson(), toastIdPrefix, options);
+    return showToast(toastIdPrefix, result.toJson(), options);
 }
 
 export function showToastGroupByResults(results: { [toastIdPrefix: string]: Result<unknown> }, options?: { onRetry?: () => void }): Id[] | undefined {
@@ -28,7 +28,10 @@ export function showToastGroupByResults(results: { [toastIdPrefix: string]: Resu
     return showToastsGroup(_results, options);
 }
 
-export function showToast(result: ResultJson<unknown>, toastIdPrefix: string, options?: { onRetry?: () => void }): Id | undefined {
+export function showToast(toastIdPrefix: string, result: ResultJson<unknown>, options?: { onRetry?: () => void }): Id | undefined {
+    if (result == null || toastIdPrefix == null || toastIdPrefix.toString().length === 0) {
+        return;
+    }
     const toastIds = showToastsGroup({ [toastIdPrefix]: result }, options);
     if (toastIds == null || !Array.isArray(toastIds) || toastIds.length === 0) {
         return;

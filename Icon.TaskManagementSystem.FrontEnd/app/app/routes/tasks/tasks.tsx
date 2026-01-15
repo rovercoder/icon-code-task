@@ -9,6 +9,7 @@ import { closeToastById, showToast, showToastsGroup } from "~/components/toast/t
 import type { DetailsForTasks } from "~/types/details.types";
 import type { Task, TaskList } from "~/types/tasks.types";
 import { shouldRevalidateRouteNavigation } from "~/utils/routing.utils";
+import { ToastIdPrefix } from "~/constants/toasts.constants";
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -22,8 +23,8 @@ const getTasksLoadingResult = () => Result.Loading<Task[]>('Tasks are being fetc
 
 export const loader = async (): Promise<{ details: ResultJson<DetailsForTasks>, tasks: ResultJson<TaskList> }> => {
 
-    const detailsForTasksLoadingToastId = showToast(getDetailsForTasksLoadingResult(), 'details-for-tasks-loading');
-    const tasksLoadingToastId = showToast(getTasksLoadingResult(), 'tasks-loading');
+    const detailsForTasksLoadingToastId = showToast(ToastIdPrefix.TASKS_DETAILS_FOR_TASKS_LOADING, getDetailsForTasksLoadingResult());
+    const tasksLoadingToastId = showToast(ToastIdPrefix.TASKS_TASKS_LOADING, getTasksLoadingResult());
 
     const detailsResult = await getDetailsForTasks();
     const tasksResult = await getTasks({});
@@ -68,7 +69,7 @@ export default function Tasks() {
 
     useEffect(() => {
         if (details && tasks) {
-            showToastsGroup({ 'details-for-tasks-loading': details, 'tasks-loading': tasks }, { onRetry: handleRetry });
+            showToastsGroup({ [ToastIdPrefix.TASKS_DETAILS_FOR_TASKS_LOADING]: details, [ToastIdPrefix.TASKS_TASKS_LOADING]: tasks }, { onRetry: handleRetry });
         }
     }, [details, tasks]);
 

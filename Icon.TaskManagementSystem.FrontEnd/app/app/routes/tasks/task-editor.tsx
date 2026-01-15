@@ -8,6 +8,7 @@ import { closeToastById, showToast, showToastByResult } from "~/components/toast
 import { useCallback, useContext, useEffect } from "react";
 import { TasksContext } from "~/contexts/tasks.context";
 import { type TaskAllExceptIdWithIdempotencyKey, TaskAllExceptIdWithIdempotencyKeySchema } from "~/adapters/tasks.api.types";
+import { ToastIdPrefix } from "~/constants/toasts.constants";
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -29,7 +30,7 @@ export async function loader({ params }: LoaderFunctionArgs): Promise<{task: Res
 
     const _taskId = taskId?.toString().trim();
 
-    const loadingToastId = showToast(getLoadingTaskResult(), 'task-loading');
+    const loadingToastId = showToast(ToastIdPrefix.TASK_EDITOR_TASK_LOADING, getLoadingTaskResult());
 
     if (_taskId == null || isNewTask(_taskId)) {
         // For "create"
@@ -111,7 +112,7 @@ export default function TaskEditor() {
     }
 
     useEffect(() => {
-        showToast(task, 'task-loading', { onRetry: handleRetry })
+        showToast(ToastIdPrefix.TASK_EDITOR_TASK_LOADING, task, { onRetry: handleRetry })
     }, [task]);
 
     let _task: Task | null = null;
@@ -120,7 +121,7 @@ export default function TaskEditor() {
         if (validationResult.success) {
             _task = validationResult.data;
         } else {
-            showToastByResult(Result.Failure(StatusInternal.VALIDATION_FAILED, 'Task validation failed!'), 'task-validation', { onRetry: handleRetry })
+            showToastByResult(ToastIdPrefix.TASK_EDITOR_TASK_VALIDATION, Result.Failure(StatusInternal.VALIDATION_FAILED, 'Task validation failed!'), { onRetry: handleRetry })
             return <div>Task validation failed!</div>
         }
     }
@@ -131,12 +132,12 @@ export default function TaskEditor() {
     // Show errors from action
     useEffect(() => {
         if (actionData != null && actionData.result != null) {
-            showToast(actionData.result, 'action-data-result-loaded');
+            showToast(ToastIdPrefix.TASK_EDITOR_ACTION_DATA_RESULT_LOADED, actionData.result);
             if (actionData.result.isSuccess) {
                 if (isCreateMode) {
                     const _res = TaskSchema.safeParse(actionData.result.value);
                     if (!_res.success) {
-                        showToastByResult(Result.Failure(StatusInternal.INVALID_STATE, 'Action data result validation failed for create action!'), 'action-data-result-validation');
+                        showToastByResult(ToastIdPrefix.TASK_EDITOR_ACTION_DATA_RESULT_VALIDATION, Result.Failure(StatusInternal.INVALID_STATE, 'Action data result validation failed for create action!'));
                         tasksContext.refreshAllTasks();
                     } else {
                         tasksContext.addTask(_res.data);
@@ -145,13 +146,13 @@ export default function TaskEditor() {
                     if (_task != null && _task.id != null) {
                         tasksContext.deleteTask({ id: _task.id });
                     } else {
-                        showToastByResult(Result.Failure(StatusInternal.INVALID_STATE, 'Task ID cannot be undefined for delete action!'), 'action-data-result-delete-task-id-validation');
+                        showToastByResult(ToastIdPrefix.TASK_EDITOR_ACTION_DATA_RESULT_DELETE_TASK_ID_VALIDATION, Result.Failure(StatusInternal.INVALID_STATE, 'Task ID cannot be undefined for delete action!'));
                         tasksContext.refreshAllTasks();
                     }
                 } else if (_task != null && _task.id != null) {
                     const _res = TaskSchema.safeParse(actionData.result.value);
                     if (!_res.success) {
-                        showToastByResult(Result.Failure(StatusInternal.INVALID_STATE, 'Action data result validation failed for update action!'), 'action-data-result-validation');
+                        showToastByResult(ToastIdPrefix.TASK_EDITOR_ACTION_DATA_RESULT_VALIDATION, Result.Failure(StatusInternal.INVALID_STATE, 'Action data result validation failed for update action!'));
                         tasksContext.refreshAllTasks();
                     } else {
                         tasksContext.updateTask(_res.data);
