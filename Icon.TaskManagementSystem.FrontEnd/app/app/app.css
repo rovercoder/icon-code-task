@@ -13,3 +13,7 @@ body {
     color-scheme: dark;
   }
 }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
