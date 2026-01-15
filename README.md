@@ -11,18 +11,18 @@ A comprehensive task management system built with a modern tech stack.
 
 To run the entire application using Docker, follow these steps:
 
-1. Navigate to the project root directory:
+1. Navigate to the project root directory.
    ```
-   cd Icon.TaskManagementSystem (as an example)
+   cd Icon.TaskManagementSystem
    ```
 
 2. Build and start the services:
    
-   Use the provided run.bat or ./run.sh scripts to start the required services.
+   Use the provided `run.bat` or `./run.sh` scripts to start the required services.
 
    or 
 
-   Open a terminal window and browse into the root directory of the repository. Then:
+   Run this command in the terminal:
 
    ```
    docker-compose up --build
