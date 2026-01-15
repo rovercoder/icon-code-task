@@ -1,5 +1,6 @@
 export const noRevalidateQueryParamKey = 'noRevalidate';
-export const noRevalidateQueryParamFull = 'noRevalidate=true';
+export const noRevalidateQueryParamValues: [string, string] = ['true', '1'];
+export const noRevalidateQueryParamFull = `${noRevalidateQueryParamKey}=${noRevalidateQueryParamValues[0]}`;
 
 export const shouldRevalidateRouteNavigation = (params: { startsWithUrlPath: string, currentUrl: URL, nextUrl: URL, formMethod: "GET" | "POST" | "PUT" | "PATCH" | "DELETE" | undefined, defaultShouldRevalidate: boolean }): boolean => {
     if (params == null || typeof params !== 'object') {
@@ -16,8 +17,12 @@ export const shouldRevalidateRouteNavigation = (params: { startsWithUrlPath: str
     const nextPath = nextUrl.pathname;
 
     // If we're navigating within the /example route hierarchy, don't revalidate unless there's a form submission
-    if (currentPath.startsWith(startsWithUrlPath) && nextPath.startsWith(startsWithUrlPath) && ['true', '1'].includes(nextUrl.searchParams.get(noRevalidateQueryParamKey)?.toLowerCase() ?? '')) {
-        // Revalidate only for form submissions
+    if (currentPath.startsWith(startsWithUrlPath) 
+            && nextPath.startsWith(startsWithUrlPath) 
+            && nextUrl.searchParams.has(noRevalidateQueryParamKey) 
+            && noRevalidateQueryParamValues.includes(nextUrl.searchParams.get(noRevalidateQueryParamKey)?.toLowerCase() ?? '')) {
+        
+                // Revalidate only for form submissions
         if (formMethod) return defaultShouldRevalidate;
 
         // Don't revalidate when navigating between /example and /example/test/* routes

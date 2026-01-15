@@ -9,36 +9,36 @@ export function Toast() {
 
 export const openToastDatabase: { [baseToastId: string]: number } = {};
 
-export function showToastByResult(result: Result<unknown>, toastId: string, options?: { onRetry?: () => void }): Id | undefined {
+export function showToastByResult(result: Result<unknown>, toastIdPrefix: string, options?: { onRetry?: () => void }): Id | undefined {
     if (result == null || !(result instanceof Result)) {
         return;
     }
-    return showToast(result.toJson(), toastId, options);
+    return showToast(result.toJson(), toastIdPrefix, options);
 }
 
-export function showToastGroupByResults(results: { [toastId: string]: Result<unknown> }, options?: { onRetry?: () => void }): Id[] | undefined {
-    if (results == null || typeof results !== 'object' || Object.keys(results).some(toastId => !(results[toastId] instanceof Result))) {
+export function showToastGroupByResults(results: { [toastIdPrefix: string]: Result<unknown> }, options?: { onRetry?: () => void }): Id[] | undefined {
+    if (results == null || typeof results !== 'object' || Object.keys(results).some(toastIdPrefix => !(results[toastIdPrefix] instanceof Result))) {
         return;
     }
 
-    const _results: { [toastId: string]: ResultJson<unknown> } = {};
-    for (const toastId in results) {
-        _results[toastId] = results[toastId].toJson();
+    const _results: { [toastIdPrefix: string]: ResultJson<unknown> } = {};
+    for (const toastIdPrefix in results) {
+        _results[toastIdPrefix] = results[toastIdPrefix].toJson();
     }
     return showToastsGroup(_results, options);
 }
 
-export function showToast(result: ResultJson<unknown>, toastId: string, options?: { onRetry?: () => void }): Id | undefined {
-    const toastIds = showToastsGroup({ [toastId]: result }, options);
+export function showToast(result: ResultJson<unknown>, toastIdPrefix: string, options?: { onRetry?: () => void }): Id | undefined {
+    const toastIds = showToastsGroup({ [toastIdPrefix]: result }, options);
     if (toastIds == null || !Array.isArray(toastIds) || toastIds.length === 0) {
         return;
     }
     return toastIds[0];
 }
 
-export function showToastsGroup(results: { [toastId: string]: ResultJson<unknown> }, options?: { onRetry?: () => void }): Id[] | undefined {
+export function showToastsGroup(results: { [toastIdPrefix: string]: ResultJson<unknown> }, options?: { onRetry?: () => void }): Id[] | undefined {
     const resultJsonFields = fields<ResultJson<unknown>>({ value: null, status: StatusInternal.DEFAULT_ERROR, isSuccess: false, isLoading: false, message: '', messageDetails: '', fullDescription: '' });
-    if (results == null || typeof results !== 'object' || ![resultJsonFields.isSuccess, resultJsonFields.fullDescription].every(propName => Object.keys(results).every(resultKey => propName in results[resultKey]))) {
+    if (results == null || typeof results !== 'object' || ![resultJsonFields.isSuccess, resultJsonFields.isLoading, resultJsonFields.fullDescription].every(propName => Object.keys(results).every(resultKey => propName in results[resultKey]))) {
         return;
     }
     let onRetry: (() => void) | undefined = undefined;
@@ -47,26 +47,26 @@ export function showToastsGroup(results: { [toastId: string]: ResultJson<unknown
             onRetry = options.onRetry;
         }
     }
-    const toastIds: Id[] = [];
+    const openedToastIds: Id[] = [];
     const _onRetry = () => {
-        for (const toastId of toastIds) {
+        for (const toastId of openedToastIds) {
             closeToastById(toastId);
         }
         onRetry?.();
     }
-    for (const resultKey in results) {
-        if (!(resultKey in openToastDatabase)) {
-            openToastDatabase[resultKey] = 0;
+    for (const toastIdPrefix in results) {
+        if (!(toastIdPrefix in openToastDatabase)) {
+            openToastDatabase[toastIdPrefix] = 0;
         }
-        const previousToastId = `${resultKey}-${openToastDatabase[resultKey]}`;
+        const previousToastId = `${toastIdPrefix}-${openToastDatabase[toastIdPrefix]}`;
         closeToastById(previousToastId);
 
-        openToastDatabase[resultKey] = openToastDatabase[resultKey] + 1;
-        const thisToastId = `${resultKey}-${openToastDatabase[resultKey]}`;
+        openToastDatabase[toastIdPrefix] = openToastDatabase[toastIdPrefix] + 1;
+        const thisToastId = `${toastIdPrefix}-${openToastDatabase[toastIdPrefix]}`;
         
-        const result = results[resultKey];
+        const result = results[toastIdPrefix];
         if (result.isSuccess) {
-            toastIds.push(
+            openedToastIds.push(
                 toast.success(
                     <div>
                         <span style={{whiteSpace: "pre-wrap"}}>{result.fullDescription}</span>
@@ -85,7 +85,7 @@ export function showToastsGroup(results: { [toastId: string]: ResultJson<unknown
                 })
             );
         } else if (result.isLoading) {
-            toastIds.push(
+            openedToastIds.push(
                 toast.loading(
                     <div>
                         <span style={{whiteSpace: "pre-wrap"}}>{result.fullDescription}</span>
@@ -104,7 +104,7 @@ export function showToastsGroup(results: { [toastId: string]: ResultJson<unknown
                 })
             );
         } else {
-            toastIds.push(
+            openedToastIds.push(
                 toast.error(
                     <div>
                         <span style={{whiteSpace: "pre-wrap"}}>{result.fullDescription}</span>
@@ -141,7 +141,7 @@ export function showToastsGroup(results: { [toastId: string]: ResultJson<unknown
             );
         }
     }
-    return toastIds;
+    return openedToastIds;
 }
 
 export function closeToastById(toastId: Id): void {
