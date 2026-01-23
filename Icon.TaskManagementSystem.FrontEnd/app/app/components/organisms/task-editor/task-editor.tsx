@@ -8,11 +8,11 @@ import { uuidv7 } from '~/utils/uuid.utils';
 interface TaskEditorProps {
     task: Task | null;
     taskStatuses: TaskStatusList;
-    goToTasksList: (options?: { isDeleteAction: boolean }) => void
+    goToTasksList: (options: { withSearchParameters: boolean, isDeleteAction?: boolean }) => void
 }
 
 // 🔹 COMPONENT
-const TaskEditorPage: React.FC<TaskEditorProps> = ({ task, taskStatuses, goToTasksList }) => {    
+const TaskEditor: React.FC<TaskEditorProps> = ({ task, taskStatuses, goToTasksList }) => {    
     const navigation = useNavigation();
     const isSubmitting = navigation.state === 'submitting';
 
@@ -43,9 +43,6 @@ const TaskEditorPage: React.FC<TaskEditorProps> = ({ task, taskStatuses, goToTas
 
     return (
         <div className="task-editor">
-            <div className="task-editor-panel">
-                <h2>{isCreateMode ? 'Create New Task' : 'Edit Task'}</h2>
-            </div>
             <div className='task-form-container'>
                 <Form method="post" className="task-form" onSubmit={changeIdempotencyKey}>
                     { task && <input type="hidden" name="taskId" value={task.id} /> }
@@ -116,7 +113,7 @@ const TaskEditorPage: React.FC<TaskEditorProps> = ({ task, taskStatuses, goToTas
                             </button>
                         )}
 
-                        <button type="button" onClick={() => goToTasksList()}>
+                        <button type="button" onClick={() => goToTasksList({ withSearchParameters: true })}>
                             Return to Tasks List
                         </button>
                     </div>
@@ -127,4 +124,4 @@ const TaskEditorPage: React.FC<TaskEditorProps> = ({ task, taskStatuses, goToTas
     );
 }
 
-export default TaskEditorPage;
+export default TaskEditor;

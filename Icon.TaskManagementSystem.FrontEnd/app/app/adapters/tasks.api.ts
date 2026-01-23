@@ -1,6 +1,6 @@
 import { api, performRequest } from "./axios";
-import { TaskAllExceptIdOptionalSchema, TaskIdOnlySchema, TaskListSchema, TaskSchema, type Task, type TaskAllExceptIdOptional, type TaskIdOnly, type TaskList } from "~/types/tasks.types";
-import { TaskAllExceptIdWithIdempotencyKeySchema, TaskIdOnlyRequiredWithIdempotencyKeySchema, type TaskAllExceptIdWithIdempotencyKey, type TaskIdOnlyRequiredWithIdempotencyKey } from "./tasks.api.types";
+import { TaskAllExceptIdOptionalListSchema, TaskAllExceptIdOptionalSchema, TaskIdOnlySchema, TaskListsByMultipleCriteriaSchema, TaskListSchema, TaskSchema, type Task, type TaskAllExceptIdOptional, type TaskAllExceptIdOptionalList, type TaskIdOnly, type TaskList, type TaskListsByMultipleCriteria } from "~/types/tasks.types";
+import { TaskAllExceptIdWithIdempotencyKeySchema, TaskIdOnlyRequiredWithIdempotencyKeySchema, TasksQueryByMultipleCriteriaWithGlobalCriteriaSchema, type TaskAllExceptIdWithIdempotencyKey, type TaskIdOnlyRequiredWithIdempotencyKey, type TasksQueryByMultipleCriteriaWithGlobalCriteria } from "./tasks.api.types";
 import { StatusInternal, Result } from "./result";
 
 export const getTasks = async (data: TaskAllExceptIdOptional): Promise<Result<TaskList>> => {
@@ -9,6 +9,14 @@ export const getTasks = async (data: TaskAllExceptIdOptional): Promise<Result<Ta
         return Result.Failure<TaskList>(StatusInternal.VALIDATION_FAILED, 'Validation failed for getTasks parameters!', validationResult.error);
     }
     return await performRequest<TaskList>(api.get("/tasks", { params: data }), TaskListSchema, 'Tasks obtained successfully!', 'Tasks fetching failed!');
+}
+
+export const getTasksByMultipleCriteria = async (data: TasksQueryByMultipleCriteriaWithGlobalCriteria): Promise<Result<TaskListsByMultipleCriteria>> => {
+    const validationResult = TasksQueryByMultipleCriteriaWithGlobalCriteriaSchema.safeParse(data);
+    if (!validationResult.success) {
+        return Result.Failure<TaskListsByMultipleCriteria>(StatusInternal.VALIDATION_FAILED, 'Validation failed for getTasksByMultipleCriteria parameters!', validationResult.error);
+    }
+    return await performRequest<TaskListsByMultipleCriteria>(api.get("/tasks", { params: {...data, multiple: JSON.stringify(data.multiple) } }), TaskListsByMultipleCriteriaSchema, 'Tasks obtained successfully!', 'Tasks fetching failed!');
 }
 
 export const getTask = async (data: TaskIdOnly): Promise<Result<Task>> => {

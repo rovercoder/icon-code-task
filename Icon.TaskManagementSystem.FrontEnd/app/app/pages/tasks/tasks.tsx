@@ -1,13 +1,14 @@
 import { TasksContext } from "~/contexts/tasks.context";
 import { useEffect, useState } from "react";
-import type { Task, TaskIdOnlyRequired } from "~/types/tasks.types";
+import type { Task, TaskAllExceptIdOptional, TaskIdOnlyRequired, TaskList } from "~/types/tasks.types";
 import type { DetailsForTasks } from "~/types/details.types";
 import { useNavigate } from "react-router";
 import { noRevalidateQueryParamFull } from "~/utils/routing.utils";
+import { tasksListQueryParameterNameForSearch } from "~/routes/tasks/tasks-list.consts";
 
 interface TasksPageProps {
     children: React.ReactNode;
-    tasks: Task[];
+    tasks: TaskList;
     details: DetailsForTasks;
     refreshAllTasks: () => void;
 }
@@ -37,8 +38,16 @@ const TasksPage: React.FC<TasksPageProps> = ({children, tasks, details, refreshA
     };
 
     const navigate = useNavigate();
-    const goToTasksList = (options?: { isDeleteAction: boolean }) => {
-        navigate(`/tasks?${noRevalidateQueryParamFull}`, options?.isDeleteAction?.toString().toLowerCase() === 'true' ? { replace: true } : {});
+    const goToTasksList = (options: { withSearchParameters: boolean, isDeleteAction?: boolean }) => {
+        const queryParameters = [noRevalidateQueryParamFull];
+        if (options?.withSearchParameters?.toString().toLowerCase() === 'true') {
+            const searchParams = new URLSearchParams(location.search);
+            if (searchParams.has(tasksListQueryParameterNameForSearch)) {
+                queryParameters.push(`${tasksListQueryParameterNameForSearch}=${encodeURIComponent(searchParams.get(tasksListQueryParameterNameForSearch) ?? '')}`)
+            }
+        }
+        const queryString = queryParameters.filter(x => !!x && x.toString().trim().length > 0).join('&');
+        navigate(`/tasks${(queryString != null && queryString.toString().trim().length > 0) ? `?${queryString.toString().trim()}` : ''}`, options?.isDeleteAction?.toString().toLowerCase() === 'true' ? { replace: true } : {});
     }
 
     return  <TasksContext.Provider value={{ tasks: tasksList, taskStatuses: details.taskStatuses, addTask, updateTask, deleteTask, refreshAllTasks, goToTasksList }}>

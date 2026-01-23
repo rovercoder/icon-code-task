@@ -4,14 +4,12 @@ GET {{Icon.TaskManagementSystem.Api.Api_HostAddress}}/details/tasks
 Accept: application/json
 ###
 
-GET {{Icon.TaskManagementSystem.Api.Api_HostAddress}}/tasks/
+GET {{Icon.TaskManagementSystem.Api.Api_HostAddress}}/tasks?title=New%20Task&description=Task%20Description&statusId=EsfZDnXWcWO3oIQJycsis7
 Accept: application/json
-Content-Type: application/json
-{
-    "title": "New Task",
-    "description": "Task Description",
-    "statusId": "EsfZDnXWcWO3oIQJycsis7"
-}
+###
+
+GET {{Icon.TaskManagementSystem.Api.Api_HostAddress}}/tasks?multiple=%5B%7B%22title%22%3A%20%22New%20Task%22%2C%20%22description%22%3A%20%22Task%20Description%22%2C%20%22statusId%22%3A%20%22EsfZDnXWcWO3oIQJycsis7%22%7D%2C%20%7B%7D%5D
+Accept: application/json
 ###
 
 POST {{Icon.TaskManagementSystem.Api.Api_HostAddress}}/tasks/

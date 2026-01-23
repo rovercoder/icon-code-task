@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Icon.TaskManagementSystem.Api.Application.Shared;
+namespace Icon.TaskManagementSystem.Api.Application.Common.Responses;
 
 public class DetailsResponse(Domain.Details details)
 {

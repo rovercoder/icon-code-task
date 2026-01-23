@@ -38,6 +38,15 @@ export class Result<T> {
         return this.messageDetails;
     }
 
+    clone<Z>(value?: Z | undefined, replacements?: { status?: _StatusInternal, message?: string | undefined, messageDetails?: unknown | undefined }): Result<Z> {
+        return new Result<Z>(
+            value,
+            replacements?.status === undefined ? this.getStatus() : replacements.status,
+            replacements?.message === undefined ? this.getMessage() : replacements.message,
+            replacements?.messageDetails === undefined ? this.getMessageDetails() : replacements.messageDetails
+        );
+    }
+
     static Success<T>(value: T, status: _StatusInternal = StatusInternal.OK, message?: string, messageDetails?: unknown): Result<T> {
         return new Result<T>(value, status, message, messageDetails);
     }

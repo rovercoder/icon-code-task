@@ -8,7 +8,7 @@ export interface TasksState {
     updateTask: (task: Task) => void;
     deleteTask: (task: TaskIdOnlyRequired) => void;
     refreshAllTasks: () => void;
-    goToTasksList: (options?: { isDeleteAction: boolean }) => void;
+    goToTasksList: (options: { withSearchParameters: boolean, isDeleteAction?: boolean }) => void;
 }
 
 export const TasksContext = createContext<TasksState>({

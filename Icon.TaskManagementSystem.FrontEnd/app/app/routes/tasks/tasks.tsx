@@ -3,13 +3,13 @@ import type { Route } from "../../routes/tasks/+types/tasks";
 import { Outlet, useLoaderData, useRevalidator, type ShouldRevalidateFunction } from "react-router";
 import { useCallback, useEffect } from "react";
 import { getDetailsForTasks } from "~/adapters/details.api";
-import { type ResultJson, Result, StatusInternal } from "~/adapters/result";
+import { type ResultJson, Result } from "~/adapters/result";
 import { getTasks } from "~/adapters/tasks.api";
-import { closeToastById, showToast, showToastsGroup } from "~/components/toast/toast";
-import ErrorAlert from "~/components/error-alert/error-alert";
-import Loader from "~/components/loader/loader";
-import type { DetailsForTasks } from "~/types/details.types";
-import type { Task, TaskList } from "~/types/tasks.types";
+import { closeToastById, showToast, showToastsGroup } from "~/components/helpers/toast/toast";
+import ErrorAlert from "~/components/helpers/error-alert/error-alert";
+import Loader from "~/components/helpers/loader/loader";
+import { type DetailsForTasks } from "~/types/details.types";
+import { type TaskList } from "~/types/tasks.types";
 import { shouldRevalidateRouteNavigation } from "~/utils/routing.utils";
 import { ToastIdPrefix } from "~/constants/toasts.constants";
 
@@ -21,15 +21,14 @@ export function meta({ }: Route.MetaArgs) {
 }
 
 const getDetailsForTasksLoadingResult = () => Result.Loading<DetailsForTasks>('Details for tasks are being fetched!').toJson();
-const getTasksLoadingResult = () => Result.Loading<Task[]>('Tasks are being fetched!').toJson();
+const getTasksLoadingResult = () => Result.Loading<TaskList>('Tasks are being fetched!').toJson();
 
 export const loader = async (): Promise<{ details: ResultJson<DetailsForTasks>, tasks: ResultJson<TaskList> }> => {
 
     const detailsForTasksLoadingToastId = showToast(ToastIdPrefix.TASKS_DETAILS_FOR_TASKS_LOADING, getDetailsForTasksLoadingResult());
     const tasksLoadingToastId = showToast(ToastIdPrefix.TASKS_TASKS_LOADING, getTasksLoadingResult());
 
-    const detailsResult = await getDetailsForTasks();
-    const tasksResult = await getTasks({});
+    const [detailsResult, tasksResult] = await Promise.all([getDetailsForTasks(), getTasks({})]);
 
     if (detailsForTasksLoadingToastId) {
         closeToastById(detailsForTasksLoadingToastId);

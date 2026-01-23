@@ -9,7 +9,14 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import { Toast } from "./components/toast/toast";
+import { Toast } from "./components/helpers/toast/toast";
+import { initializeThemeWatcher } from "./utils/theme.utils";
+
+// Initialize theme watcher to handle system theme changes
+if (typeof window !== 'undefined') {
+  // Initialize the theme watcher when the app loads
+  initializeThemeWatcher();
+}
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
