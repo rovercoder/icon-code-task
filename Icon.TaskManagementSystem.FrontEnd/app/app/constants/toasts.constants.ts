@@ -1,5 +1,6 @@
 export const ToastIdPrefix = {
     TASKS_DETAILS_FOR_TASKS_LOADING: 'tasks-details-for-tasks-loading',
+    TASKS_LIST_QUERY_MALFORMED: 'tasks-list-query-malformed',
     TASKS_TASKS_LOADING: 'tasks-tasks-loading',
     TASK_EDITOR_TASK_LOADING: 'task-editor-task-loading',
     TASK_EDITOR_TASK_VALIDATION: 'task-editor-task-validation',

@@ -1,11 +1,11 @@
-.task-editor {
+.task-editor-page {
     display: flex;
     flex-direction: column;
     height: var(--viewportHeight);
     overflow: auto;
 }
 
-.task-editor-panel {
+.task-editor-page .task-editor-panel {
     position: sticky;
     top: 0;
     left: 0;
@@ -21,7 +21,7 @@
     border-bottom: 1px solid #eee;
 }
 
-.task-editor-panel h2 {
+.task-editor-page .task-editor-panel h2 {
     margin: 0;
     font-size: 1.5rem;
     color: #333;
@@ -31,34 +31,4 @@
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-}
-
-.form-group {
-    margin-bottom: 16px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 4px;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.form-actions {
-    display: flex;
-    gap: 12px;
-    margin-top: 24px;
-}
-
-.btn-delete {
-    background-color: #d32f2f;
-    color: white;
 }

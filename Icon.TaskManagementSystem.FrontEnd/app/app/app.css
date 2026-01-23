@@ -51,14 +51,35 @@
 }
 
 html,
-body {
-  @apply bg-white dark:bg-gray-950;
+body,
+*[role="dialog"] {
+    @apply bg-white dark:bg-gray-950;
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+    @media (prefers-color-scheme: dark) {
+        color-scheme: dark;
+    }
 }
 
 *, *::before, *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.grid-overlap {
+    display: grid;
+}
+
+.grid-overlap > * {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.grid-overlap > *:empty {
+    pointer-events: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button[disabled=""], button[disabled="true"], button[disabled="disabled"] {
+    cursor: not-allowed;
 }

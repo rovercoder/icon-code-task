@@ -1,16 +1,17 @@
-import TaskEditorPage from "~/pages/tasks/task-editor/task-editor";
+import TaskEditorPage from "~/pages/tasks/task-editor/task-editor-page";
 import type { Route } from "../../routes/tasks/+types/task-editor";
-import { useActionData, useFetcher, useLoaderData, type ActionFunctionArgs, type LoaderFunctionArgs } from "react-router";
+import { useActionData, useFetcher, useLoaderData, useSearchParams, type ActionFunctionArgs, type LoaderFunctionArgs } from "react-router";
 import { createTask, deleteTask, getTask, updateTask } from "~/adapters/tasks.api";
 import { Result, StatusInternal, type ResultJson } from "~/adapters/result";
 import { TaskSchema, type Task } from "~/types/tasks.types";
-import { closeToastById, showToast, showToastByResult } from "~/components/toast/toast";
+import { closeToastById, showToast, showToastByResult } from "~/components/helpers/toast/toast";
 import { useCallback, useContext, useEffect } from "react";
 import { TasksContext } from "~/contexts/tasks.context";
 import { type TaskAllExceptIdWithIdempotencyKey, TaskAllExceptIdWithIdempotencyKeySchema } from "~/adapters/tasks.api.types";
 import { ToastIdPrefix } from "~/constants/toasts.constants";
-import ErrorAlert from "~/components/error-alert/error-alert";
-import Loader from "~/components/loader/loader";
+import ErrorAlert from "~/components/helpers/error-alert/error-alert";
+import Loader from "~/components/helpers/loader/loader";
+import TaskEditorDialog from "~/pages/tasks/task-editor/task-editor-dialog";
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -96,6 +97,8 @@ export async function action({ request }: ActionFunctionArgs): Promise<{ isDelet
 }
 
 export default function TaskEditor() {
+    const [searchParams, setSearchParams] = useSearchParams();
+
     const fetcher = useFetcher<{ task: ResultJson<Task> }>();
     const loaderData = useLoaderData<typeof loader>();
     const { task } = fetcher.data != null ? fetcher.data : (loaderData != null ? loaderData : { task: getLoadingTaskResult() })
@@ -160,10 +163,12 @@ export default function TaskEditor() {
                         tasksContext.updateTask(_res.data);
                     }
                 }
-                tasksContext.goToTasksList({ isDeleteAction: actionData.isDelete });
+                tasksContext.goToTasksList({ withSearchParameters: true, isDeleteAction: actionData.isDelete });
             }
         }
     }, [actionData]);
     
-    return <TaskEditorPage task={_task} taskStatuses={tasksContext.taskStatuses} goToTasksList={tasksContext.goToTasksList} />;
+    return searchParams.has('page', 'dialog') 
+        ? <TaskEditorDialog task={_task} taskStatuses={tasksContext.taskStatuses} goToTasksList={tasksContext.goToTasksList} isOpen={true} />
+        : <TaskEditorPage task={_task} taskStatuses={tasksContext.taskStatuses} goToTasksList={tasksContext.goToTasksList} />;
 }

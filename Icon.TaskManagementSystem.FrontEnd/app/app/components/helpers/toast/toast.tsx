@@ -2,6 +2,7 @@ import { Bounce, toast, ToastContainer, type Id } from "react-toastify";
 import { StatusInternal, Result, type ResultJson } from "~/adapters/result";
 import { fields } from "~/utils/general.utils";
 import 'react-toastify/dist/ReactToastify.css';
+import { Fragment } from "react/jsx-runtime";
 
 export function Toast() {
     return <ToastContainer />
@@ -113,20 +114,23 @@ export function showToastsGroup(results: { [toastIdPrefix: string]: ResultJson<u
                         <span style={{whiteSpace: "pre-wrap"}}>{result.fullDescription}</span>
                         {
                             onRetry && 
-                            <button
-                                onClick={() => _onRetry()}
-                                style={{
-                                    marginLeft: '10px',
-                                    padding: '4px 8px',
-                                    background: '#4caf50',
-                                    color: 'white',
-                                    border: 'none',
-                                    borderRadius: '4px',
-                                    cursor: 'pointer',
-                                }}
-                            >
-                                Retry
-                            </button>
+                                <Fragment>
+                                    <br />
+                                    <button
+                                        onClick={() => _onRetry()}
+                                        style={{
+                                            marginLeft: '10px',
+                                            padding: '4px 8px',
+                                            background: '#4caf50',
+                                            color: 'white',
+                                            border: 'none',
+                                            borderRadius: '4px',
+                                            cursor: 'pointer',
+                                        }}
+                                    >
+                                        Retry
+                                    </button>
+                                </Fragment>
                         }
                     </div>, {
                     position: "top-right",
