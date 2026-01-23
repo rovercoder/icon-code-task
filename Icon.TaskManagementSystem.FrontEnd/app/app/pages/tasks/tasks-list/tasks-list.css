@@ -70,3 +70,8 @@
     flex-basis: auto;
     min-width: 300px;
 }
+
+.task-status-tasks {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

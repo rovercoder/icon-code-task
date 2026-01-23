@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import Input from '~/components/atoms/input/input';
 import './filter.css';
 
 type FilterFieldsTypes = 'text';
@@ -55,42 +56,44 @@ function Filter<T extends FilterFields>({ onFilterChange, fields }: FilterProps<
   return (
     <div className={`filter-container ${hasActiveFilters ? 'active-filters' : ''}`}>
       <div className="filter-icons">
-        {Object.entries(fields).map(([fieldKey, fieldProps]) =>
-          <div
-            key={fieldKey}
-            className={`filter-icon ${activeField === fieldKey || inputValues[fieldKey] ? 'active' : ''}`}
-            onClick={() => handleIconClick(fieldKey)}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            {activeField !== fieldKey && !inputValues[fieldKey] && <span className="filter-label">{fieldProps.name}</span>}
-          </div>
-        )}
+        {
+          Object.entries(fields).map(([fieldKey, fieldProps]) =>
+            <div
+              key={fieldKey}
+              className={`filter-icon ${activeField === fieldKey || inputValues[fieldKey] ? 'active' : ''}`}
+              onClick={() => handleIconClick(fieldKey)}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <span className="filter-label">{fieldProps.name}</span>
+            </div>
+          )
+        }
       </div>
 
-      {Object.entries(fields).map(([fieldKey, fieldProps]) => {
-        if (activeField === fieldKey || inputValues[fieldKey]) {
-          switch (fieldProps.type) {
-            case 'text':
-              return <div key={fieldKey} className="filter-input-container">
-                <input
-                  ref={inputRefs[fieldKey]}
-                  type={fieldProps.type}
-                  className="filter-input"
-                  placeholder={`Search by ${fieldProps.name.toLowerCase()}...`}
-                  value={inputValues[fieldKey] || ''}
-                  onChange={(e) => handleInputChange(fieldKey, e.target.value)}
-                  onBlur={() => handleBlur(fieldKey)}
-                />
-              </div>
-            default:
-              return null;
+      {
+        Object.entries(fields).map(([fieldKey, fieldProps]) => {
+          if (activeField === fieldKey || inputValues[fieldKey]) {
+            switch (fieldProps.type) {
+              case 'text':
+                return <div key={fieldKey} className="filter-input-container">
+                  <Input
+                    ref={inputRefs[fieldKey]}
+                    label={fieldProps.name}
+                    value={inputValues[fieldKey] || ''}
+                    onChange={(e) => handleInputChange(fieldKey, e.target.value)}
+                    onBlur={() => handleBlur(fieldKey)}
+                  />
+                </div>
+              default:
+                return null;
+            }
           }
-        }
-        return null;
-      })}
+          return null;
+        })
+      }
     </div>
   );
 };
