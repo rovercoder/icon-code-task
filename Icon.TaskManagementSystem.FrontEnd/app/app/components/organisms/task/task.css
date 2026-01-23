@@ -1,8 +1,8 @@
 .task {
     border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 12px;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
     background-color: #f9f9f9;
 }
 
@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
 }
 
 .task-title {
@@ -27,8 +27,8 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 4px;
-    border-radius: 4px;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
     color: #007bff;
     text-decoration: none;
     transition: background-color 0.2s ease;
@@ -40,12 +40,12 @@
 }
 
 .edit-button:focus {
-    outline: 2px solid #007bff;
-    outline-offset: 2px;
+    outline: 0.125rem solid #007bff;
+    outline-offset: 0.125rem;
 }
 
 .task-description {
-    margin: 0 0 12px 0;
+    margin: 0 0 0.75rem 0;
     color: #666;
     line-height: 1.4;
 }
@@ -54,6 +54,6 @@
     font-size: 0.875rem;
     color: #555;
     background-color: #e9ecef;
-    padding: 4px 8px;
-    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
 }

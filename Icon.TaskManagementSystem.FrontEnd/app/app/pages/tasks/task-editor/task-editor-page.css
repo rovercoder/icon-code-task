@@ -12,8 +12,8 @@
     right: 0;
     width: 100%;
     background-color: white;
-    padding: 16px 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 1.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,5 +30,5 @@
 .task-form {
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 1.25rem;
 }

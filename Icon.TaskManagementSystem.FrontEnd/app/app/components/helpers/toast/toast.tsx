@@ -119,12 +119,12 @@ export function showToastsGroup(results: { [toastIdPrefix: string]: ResultJson<u
                                     <button
                                         onClick={() => _onRetry()}
                                         style={{
-                                            marginLeft: '10px',
-                                            padding: '4px 8px',
+                                            marginLeft: '0.625rem',
+                                            padding: '0.25rem 0.5rem',
                                             background: '#4caf50',
                                             color: 'white',
                                             border: 'none',
-                                            borderRadius: '4px',
+                                            borderRadius: '0.25rem',
                                             cursor: 'pointer',
                                         }}
                                     >

@@ -6,10 +6,10 @@
 
 .input-field {
   width: 100%;
-  padding: 12px 16px 12px 16px; /* Extra padding below for label */
+  padding: 0.75rem 1rem 0.75rem 1rem; /* Extra padding below for label */
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: 0.25rem;
+  font-size: 1rem;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   box-sizing: border-box;
   background-color: transparent;
@@ -18,40 +18,40 @@
 .input-field:focus {
   outline: none;
   border-color: #2196f3;
-  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+  box-shadow: 0 0 0 0.125rem rgba(33, 150, 243, 0.2);
 }
 
 .input-label {
   position: absolute;
-  top: 12px;
-  left: 16px;
-  font-size: 16px;
+  top: 0.75rem;
+  left: 1rem;
+  font-size: 1rem;
   color: #999;
   pointer-events: none;
   transition: all 0.2s ease;
   background-color: white;
-  padding: 0 4px;
-  margin-left: -4px;
+  padding: 0 0.25rem;
+  margin-left: -0.25rem;
 }
 
 .input-label.input-label-floating {
-  top: -10px;
-  left: 12px;
-  font-size: 12px;
+  top: -0.625rem;
+  left: 0.75rem;
+  font-size: 0.75rem;
   color: #2196f3;
 }
 
 .input-wrapper.input-focused .input-label {
-  top: -10px;
-  left: 12px;
-  font-size: 12px;
+  top: -0.625rem;
+  left: 0.75rem;
+  font-size: 0.75rem;
   color: #2196f3;
 }
 
 .input-wrapper.input-has-value .input-label {
-  top: -10px;
-  left: 12px;
-  font-size: 12px;
+  top: -0.625rem;
+  left: 0.75rem;
+  font-size: 0.75rem;
   color: #2196f3;
 }
 
@@ -62,7 +62,7 @@
 .input-wrapper.input-error.input-focused .input-field,
 .input-wrapper.input-error.input-has-value .input-field {
   border-color: #f44336;
-  box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2);
+  box-shadow: 0 0 0 0.125rem rgba(244, 67, 54, 0.2);
 }
 
 .input-wrapper.input-error .input-label.input-label-floating {
@@ -75,10 +75,10 @@
 }
 
 .input-helper-text {
-  margin-top: 4px;
-  font-size: 12px;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
   color: #999;
-  min-height: 16px;
+  min-height: 1rem;
 }
 
 .input-helper-error {

@@ -9,12 +9,12 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    padding: 20px;
+    padding: 1.25rem;
 }
 
 .task-editor-dialog {
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.625rem 1.5625rem rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 600px;
     max-height: calc(var(--viewportHeight) * 0.9);
@@ -27,7 +27,7 @@
 @keyframes dialogSlideIn {
     from {
         opacity: 0;
-        transform: scale(0.9) translateY(-20px);
+        transform: scale(0.9) translateY(-1.25rem);
     }
 
     to {
@@ -40,7 +40,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 24px;
+    padding: 1.25rem 1.5rem;
     border-bottom: 1px solid #eee;
     background: white;
 }
@@ -54,12 +54,12 @@
 .close-button {
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 1.5rem;
     cursor: pointer;
     color: #666;
     padding: 0;
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,7 +73,7 @@
 }
 
 .task-editor-content {
-    padding: 20px 24px;
+    padding: 1.25rem 1.5rem;
     flex-grow: 1;
     overflow-y: auto;
 }
@@ -81,7 +81,7 @@
 /* Responsive styles */
 @media (max-width: 768px) {
     .dialog-backdrop {
-        padding: 10px;
+        padding: 0.625rem;
     }
 
     .task-editor-dialog {
@@ -89,10 +89,10 @@
     }
 
     .task-editor-header {
-        padding: 15px 20px;
+        padding: 0.9375rem 1.25rem;
     }
 
     .task-editor-content {
-        padding: 15px 20px;
+        padding: 0.9375rem 1.25rem;
     }
 }

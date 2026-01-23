@@ -51,6 +51,11 @@
 }
 
 html,
+body {
+    font-size: 16px;
+}
+
+html,
 body,
 *[role="dialog"] {
     @apply bg-white dark:bg-gray-950;
