@@ -69,6 +69,7 @@
     flex-grow: 1;
     flex-basis: auto;
     min-width: 300px;
+    max-width: calc(var(--viewportWidth, 100vw) * 0.4);
 }
 
 .task-status-tasks {

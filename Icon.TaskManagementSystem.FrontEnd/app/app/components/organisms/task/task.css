@@ -18,6 +18,8 @@
     font-size: 1.1rem;
     color: #333;
     flex-grow: 1;
+    word-break: break-all;
+    word-wrap: break-word;
 }
 
 .edit-button {
@@ -48,6 +50,7 @@
     margin: 0 0 0.75rem 0;
     color: #666;
     line-height: 1.4;
+    word-wrap: break-word;
 }
 
 .task-status {
