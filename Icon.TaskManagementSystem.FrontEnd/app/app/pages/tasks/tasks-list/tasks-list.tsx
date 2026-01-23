@@ -11,7 +11,7 @@ interface TasksListPageProps {
     taskStatuses: TaskStatusList;
     filterUrlQueryStringPartFull: string;
     filter: TasksBasedOnStatusNonPartialQuery,
-    setFilter: (queryCriteria: TasksBasedOnStatusNonPartialQuery) => void;
+    setFilter: (queryCriteria: TasksBasedOnStatusQuery | null | undefined) => void;
     refreshAllTasks: () => void;
     children: React.ReactNode;
 }
@@ -49,27 +49,40 @@ export const TasksListPage: React.FC<TasksListPageProps> = ({ tasks, taskStatuse
     }
 
     const handleFilterChangeByStatus = <K extends keyof TasksBasedOnStatusByStatusPartQuery[keyof TasksBasedOnStatusByStatusPartQuery]>(statusId: string, field: K, value: string) => {
-
-        const newFilterByStatusForStatusId = { ...filter.byStatus?.[statusId] };
-        if (value == null || value == '') {
-            delete newFilterByStatusForStatusId[field];
-        } else {
-            newFilterByStatusForStatusId[field] = value;
-        }
-
-        const newFilterByStatus = { ...filter.byStatus };
-        if (Object.keys(newFilterByStatusForStatusId).length == 0) {
-            delete newFilterByStatus[statusId];
-        } else {
-            newFilterByStatus[statusId] = newFilterByStatusForStatusId;
-        }
-
         const updatedFilter = {
             ...filter,
-            byStatus: newFilterByStatus
+            byStatus: {
+                ...filter.byStatus,
+                [statusId]: { 
+                    ...filter.byStatus?.[statusId], 
+                    [field]: value 
+                }
+            }
         };
 
-        setFilter(updatedFilter);
+        function cleanFilterRecursively<T>(obj: T): Partial<T> | null | undefined {
+            if (!obj || typeof obj !== 'object') 
+                return obj;
+
+            for (const key in obj) {
+                if (typeof obj[key] === 'object') {
+                    obj[key] = cleanFilterRecursively(obj[key]) as any;
+                    if (obj[key] == null || Object.keys(obj[key]).length === 0) {
+                        delete obj[key];
+                    }
+                } else if (obj[key] == null || (typeof obj[key] === 'string' && obj[key] === '')) {
+                    delete obj[key];
+                }
+            }
+
+            if (Object.keys(obj).length === 0) {
+                return null;
+            }
+
+            return obj;
+        };
+
+        setFilter(cleanFilterRecursively(updatedFilter));
     };
 
     return (

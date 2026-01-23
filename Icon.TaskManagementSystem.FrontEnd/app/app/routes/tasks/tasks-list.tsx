@@ -69,9 +69,13 @@ export default function TasksList() {
         taskStatuses: taskContext.taskStatuses 
     });
 
-    const setFilter = (queryCriteria: TasksBasedOnStatusNonPartialQuery) => {
+    const setFilter = (queryCriteria: TasksBasedOnStatusQuery | null | undefined) => {
         const newUrlSearchParams = new URLSearchParams(searchParams);
-        newUrlSearchParams.set(tasksListQueryParameterNameForSearch, JSON.stringify(queryCriteria));
+        if (queryCriteria == null) {
+            newUrlSearchParams.delete(tasksListQueryParameterNameForSearch);
+        } else {
+            newUrlSearchParams.set(tasksListQueryParameterNameForSearch, JSON.stringify(queryCriteria));
+        }
         setSearchParams(newUrlSearchParams);
     }
 
