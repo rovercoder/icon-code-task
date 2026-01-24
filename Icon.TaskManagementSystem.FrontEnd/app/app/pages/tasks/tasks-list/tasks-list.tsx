@@ -3,8 +3,9 @@ import TaskComponent from "~/components/organisms/task/task";
 import Filter from "~/components/molecules/filter/filter";
 import { noRevalidateQueryParamFull } from "~/utils/routing.utils";
 import './tasks-list.css';
-import { TasksBasedOnStatusQuerySchema, type Task, type TaskList, type TasksBasedOnStatusNonPartialQuery, type TasksBasedOnStatusQuery, type TaskStatusList, TaskSchema, type TasksBasedOnStatusByStatusPartQuery } from "~/types/tasks.types";
+import { TasksBasedOnStatusQuerySchema, type Task, type TaskList, type TasksBasedOnStatusNonPartialQuery, type TasksBasedOnStatusQuery, type TaskStatusList, TaskSchema, type TasksBasedOnStatusByStatusPartQuery, TasksBasedOnStatusNonPartialQueryWithDefaultsSchema } from "~/types/tasks.types";
 import React, { useState } from "react";
+import { removeDefaultValuesFromObject } from "~/utils/validation.utils";
 
 interface TasksListPageProps {
     tasks: TaskList;
@@ -70,7 +71,7 @@ export const TasksListPage: React.FC<TasksListPageProps> = ({ tasks, taskStatuse
                     if (obj[key] == null || Object.keys(obj[key]).length === 0) {
                         delete obj[key];
                     }
-                } else if (obj[key] == null || (typeof obj[key] === 'string' && obj[key] === '')) {
+                } else if (obj[key] == null) {
                     delete obj[key];
                 }
             }
@@ -82,7 +83,12 @@ export const TasksListPage: React.FC<TasksListPageProps> = ({ tasks, taskStatuse
             return obj;
         };
 
-        setFilter(cleanFilterRecursively(updatedFilter));
+        const updatedFilterResultWithDefaults = TasksBasedOnStatusNonPartialQueryWithDefaultsSchema.safeParse(updatedFilter);
+        if (updatedFilterResultWithDefaults.success) {
+            setFilter(cleanFilterRecursively(removeDefaultValuesFromObject(updatedFilterResultWithDefaults.data, TasksBasedOnStatusNonPartialQueryWithDefaultsSchema)));
+        } else {
+            setFilter(cleanFilterRecursively(updatedFilter));
+        }
     };
 
     return (
