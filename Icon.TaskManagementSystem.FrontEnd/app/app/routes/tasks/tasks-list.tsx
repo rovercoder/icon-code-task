@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { Result, StatusInternal } from "~/adapters/result";
 import { showToastByResult } from "~/components/helpers/toast/toast";
 import ErrorAlert from "~/components/helpers/error-alert/error-alert";
-import { TasksBasedOnStatusQuerySchema, TaskStatusListSchema, type TasksBasedOnStatusNonPartialQuery, type TasksBasedOnStatusQuery, type TaskStatusList } from "~/types/tasks.types";
+import { TasksBasedOnStatusNonPartialQueryWithDefaultsSchema, TasksBasedOnStatusQuerySchema, TaskStatusListSchema, type TasksBasedOnStatusNonPartialQuery, type TasksBasedOnStatusQuery, type TaskStatusList } from "~/types/tasks.types";
 import { ToastIdPrefix } from "~/constants/toasts.constants";
 import { TasksContext } from "~/contexts/tasks.context";
 import { TasksListPage } from "~/pages/tasks/tasks-list/tasks-list";
@@ -52,6 +52,14 @@ function getQueryCriteriaFull(options: { currentUrlSearchParameters: URLSearchPa
     for (const taskStatus of options.taskStatuses) {
         _query.byStatus[taskStatus.id] = queryCriteria.byStatus?.[taskStatus.id] ?? {};
     }
+
+    const queryResultWithDefaults = TasksBasedOnStatusNonPartialQueryWithDefaultsSchema.safeParse(_query);
+    if (queryResultWithDefaults.success) {
+        return queryResultWithDefaults.data;
+    } else {
+        console.warn('Search query parameter result with defaults failed to parse! Returning without defaults.');
+    }
+
     return _query;
 }
 

@@ -8,7 +8,7 @@ const IdempotencyKeyObjectSchema = z.object({
 export const TaskAllExceptIdWithIdempotencyKeySchema = z.intersection(TaskAllExceptIdSchema, IdempotencyKeyObjectSchema);
 export const TaskIdOnlyRequiredWithIdempotencyKeySchema = z.intersection(TaskIdOnlyRequiredSchema, IdempotencyKeyObjectSchema);
 export const TasksQueryByMultipleCriteriaWithGlobalCriteriaSchema = TaskAllExceptIdOptionalSchema.safeExtend({
-    multiple: TaskAllExceptIdOptionalListSchema.nonempty()
+    multiple: TaskAllExceptIdOptionalListSchema.nonempty().max(20),
 });
 
 export type TaskAllExceptIdWithIdempotencyKey = z.infer<typeof TaskAllExceptIdWithIdempotencyKeySchema>;

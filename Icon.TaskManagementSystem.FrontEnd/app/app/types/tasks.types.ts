@@ -24,6 +24,12 @@ export const TaskAllExceptIdCriteriaSchema = z.object({
     statusId: TaskStatusIdStringSchema.optional()
 });
 
+export const TaskAllExceptIdCriteriaWithDefaultsSchema = z.object({
+    title: z.string().max(taskTitleMaxLength).default('').optional(),
+    description: z.string().max(taskDescriptionMaxLength).default('').optional(),
+    statusId: TaskStatusIdStringSchema.optional()
+});
+
 export const TaskSchema = z.intersection(TaskIdOnlySchema, TaskAllExceptIdSchema);
 
 export const TaskListSchema = z.array(TaskSchema);
@@ -60,15 +66,23 @@ export type TaskStatus = z.infer<typeof TaskStatusSchema>;
 export type TaskStatusList = z.infer<typeof TaskStatusListSchema>;
 export type TaskListsByMultipleCriteria = z.infer<typeof TaskListsByMultipleCriteriaSchema>;
 
-export const TasksBasedOnStatusByStatusPartQuerySchema = z.record(TaskStatusIdStringSchema, TaskAllExceptIdCriteriaSchema.omit({ statusId: true })); // Omit statusId from query params
+export const TaskAllExceptIdExceptStatusIdCriteriaSchema = TaskAllExceptIdCriteriaSchema.omit({ statusId: true }); // Omit statusId from query params
+export const TaskAllExceptIdExceptStatusIdCriteriaWithDefaultsSchema = TaskAllExceptIdCriteriaWithDefaultsSchema.omit({ statusId: true }); // Omit statusId from query params
 
-export const TasksBasedOnStatusQueryNonPartialSchema = z.object({
-    global: TaskAllExceptIdCriteriaSchema,
-    byStatus: TasksBasedOnStatusByStatusPartQuerySchema,
+export const TasksBasedOnStatusByStatusPartQuerySchema = z.record(TaskStatusIdStringSchema, TaskAllExceptIdExceptStatusIdCriteriaSchema);
+export const TasksBasedOnStatusByStatusPartQueryWithDefaultsSchema = z.record(TaskStatusIdStringSchema, TaskAllExceptIdExceptStatusIdCriteriaWithDefaultsSchema);
+
+export const TasksBasedOnStatusNonPartialQueryWithDefaultsSchema = z.object({
+    global: TaskAllExceptIdCriteriaWithDefaultsSchema,
+    byStatus: TasksBasedOnStatusByStatusPartQueryWithDefaultsSchema,
 });
 
-export const TasksBasedOnStatusQuerySchema = TasksBasedOnStatusQueryNonPartialSchema.partial();
+export const TasksBasedOnStatusQuerySchema = z.object({
+    global: TaskAllExceptIdCriteriaSchema.optional(),
+    byStatus: TasksBasedOnStatusByStatusPartQuerySchema.optional(),
+});
 
+export type TaskAllExceptIdExceptStatusIdCriteria = z.infer<typeof TaskAllExceptIdExceptStatusIdCriteriaSchema>;
 export type TasksBasedOnStatusByStatusPartQuery = z.infer<typeof TasksBasedOnStatusByStatusPartQuerySchema>;
 export type TasksBasedOnStatusQuery = z.infer<typeof TasksBasedOnStatusQuerySchema>;
-export type TasksBasedOnStatusNonPartialQuery = z.infer<typeof TasksBasedOnStatusQueryNonPartialSchema>;
+export type TasksBasedOnStatusNonPartialQuery = z.infer<typeof TasksBasedOnStatusNonPartialQueryWithDefaultsSchema>;
